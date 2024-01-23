@@ -35,5 +35,5 @@ curl -i -N --http1.1 -H "Connection: Upgrade" -H "Upgrade: websocket" -H "Sec-We
 ###
 Delete the Cloud Run server with the following command.
 ```shell
-gcloud run services delete websocket-server-demo
+gcloud run services delete websocket-server-demo --region us-central1
 ```
