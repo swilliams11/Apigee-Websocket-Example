@@ -94,3 +94,7 @@ I've made a [screencast](https://youtu.be/TrGftwcI-Ps) walking through all this.
 
 Stop the ngrok server, with ^C in the window. Do the same for the nodejs server.
 Undeploy the websocket proxy from your org.  All done!
+
+
+### Updates
+I made a minor update to the WebSocket Server to send an message to all clients every 5 seconds. - SW

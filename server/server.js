@@ -36,7 +36,18 @@ const wsServer = new WebSocket.Server({
         noServer: true
       });
 
+setInterval(() => {
+      wsServer.clients.forEach(function each(client) {
+      if (client.readyState === WebSocket.OPEN) {
+        const message = `Server sent message sent at ${new Date().toLocaleString()}`;
+        client.send(message); 
+        logWrite(message);
+      }
+      });    
+    }, 5000); // Send every 1000 milliseconds (1 second)
+
 wsServer.on("connection", ws => {
+
   ws.on("message", msg => {
     logWrite('RECEIVED ' + msg.toString());
     // send to each client that is ready
@@ -47,9 +58,11 @@ wsServer.on("connection", ws => {
       }
     });
   });
+
   ws.on("pong", function(){
     logWrite(`ws pong`);
   });
+
   ws.on("close", function() {
     //do closing stuff here
     logWrite(`ws close/disconnect`);
