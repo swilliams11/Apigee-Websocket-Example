@@ -4,8 +4,9 @@ You can deploy this WebSocket server to [CloudRun](https://cloud.google.com/run/
 
 
 ```shell
+export PROJECT_ID=YOUR_PROJECT
 gcloud auth login
-gcloud config set project YOUR_PROJECT
+gcloud config set project $PROJECT_ID
 gcloud run deploy websocket-server-demo --source . --region us-central1
 ```
 
