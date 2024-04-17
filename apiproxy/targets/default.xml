@@ -10,6 +10,11 @@
     <Response/>
   </PostFlow>
   <HTTPTargetConnection>
-    <URL>wss://ws.postman-echo.com/raw/</URL>
+     <URL>https://YOUR_CLOUD_RUN_DOMAN.a.run.app</URL>
+    <Authentication>
+      <GoogleIDToken>
+        <Audience>https://YOUR_CLOUD_RUN_DOMAN.a.run.app</Audience>
+      </GoogleIDToken>
+    </Authentication>
   </HTTPTargetConnection>
 </TargetEndpoint>
